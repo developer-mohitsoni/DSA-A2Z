@@ -5,7 +5,7 @@ using namespace std;
 
 //?------------------(Brute Force Approach)------------------------------
 
-//* T.C is O(d) + O(n-d) + O(d) => O(n+d)
+//* T.C is O(n-d) + O(d) + O(d) => O(n+d)
 //* S.C is O(d) because takes extra space
 
 void rightRotateByD(vector<int> &v, int D)
@@ -21,8 +21,8 @@ void rightRotateByD(vector<int> &v, int D)
 
     vector<int> temp; // Create a temporary array to store the first D elements of the original array
 
-    // Iterate through the last D elements of the original array
-    for (int i = D + 1; i < n; i++) // T.C is O(d)
+    // Iterate through D to n-1 elements of the original array
+    for (int i = D + 1; i < n; i++) // T.C is O(n-d)
     {
         // Push each element into the temporary array
         temp.push_back(v[i]);
@@ -30,7 +30,7 @@ void rightRotateByD(vector<int> &v, int D)
 
     // Iterate through the remaining elements of the original array
 
-    for (int i = n - 1; i >= D; i--) // T.C is O(n-d)
+    for (int i = n - 1; i >= D; i--) // T.C is O(d)
     {
         // Shift each element to the right by D places
         v[i] = v[i - D];
