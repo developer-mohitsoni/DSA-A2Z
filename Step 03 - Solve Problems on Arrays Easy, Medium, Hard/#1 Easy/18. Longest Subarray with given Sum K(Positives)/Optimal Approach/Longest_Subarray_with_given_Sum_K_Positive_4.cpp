@@ -5,7 +5,10 @@ using namespace std;
 
 //?------------------(Optimal Force Approach)------------------------------
 
-//* Hashing Concept
+//* T.C:- O(2N)
+//* S.C:- O(1)
+
+//* Two Pointer Concept Concept
 int longestSubarrayWithSumK(vector<int> &v, long long k)
 {
     int left = 0;
