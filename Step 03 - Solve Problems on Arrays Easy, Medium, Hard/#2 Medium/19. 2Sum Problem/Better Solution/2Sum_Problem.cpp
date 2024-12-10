@@ -5,9 +5,9 @@ using namespace std;
 
 //?------------------(Better Solution)------------------------------
 
-//* T.C is O(nlogn)
+//* T.C is O(n) (linear)
 
-//* S.C is O(n).
+//* S.C is O(n). (due to hash map)
 
 //* Using Hashing
 int twoSum(vector<int> &v, int key)
