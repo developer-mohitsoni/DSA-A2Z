@@ -13,7 +13,7 @@ void nextPermuation(vector<int> &v)
     int n = v.size();
 
     int index = -1;
-
+    // We starting the loop from n-2 here because we are comparing the current element with the next element. If We start loop from n-1 then we will get out of bound exception while comparing with the current element.
     for (int i = n - 2; i >= 0; i--)
     {
         if (v[i] < v[i + 1])
