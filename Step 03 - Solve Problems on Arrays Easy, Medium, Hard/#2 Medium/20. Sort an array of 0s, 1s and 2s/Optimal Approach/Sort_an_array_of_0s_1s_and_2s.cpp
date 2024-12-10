@@ -5,9 +5,9 @@ using namespace std;
 
 //?------------------(Optimal Approach)------------------------------
 
-//* T.C is O(2n)
+//* T.C is O(n)  because we are traversing the array only once.
 
-//* S.C is O(1).
+//* S.C is O(1). Because we are not using any extra space.
 
 //! Dutch National Flag Alogirthm
 
