@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//?------------------(Better Approach)------------------------------
+//?------------------(Brute Approach)------------------------------
 
 //* T.C = O(N^2)
 
