@@ -39,7 +39,7 @@ int main()
 
     int ans = maxProductSubArray(arr, n);
 
-    cout << "The number of inversions are: " << ans << endl;
+    cout << "The maximum product of the subarray is " << ans << endl;
 
     return 0;
 }
