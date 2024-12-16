@@ -5,7 +5,7 @@ using namespace std;
 
 //? ---------------------------- Optimal Approach ---------------------------
 
-//* T.C => O(N)
+//* T.C => 2*O(logN)
 //* S.C => O(1)
 
 //! NOTE: Binary Search is works only on sorted arrays
