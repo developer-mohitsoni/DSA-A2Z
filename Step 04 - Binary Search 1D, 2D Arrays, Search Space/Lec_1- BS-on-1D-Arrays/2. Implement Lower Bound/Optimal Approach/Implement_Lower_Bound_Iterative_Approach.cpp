@@ -22,7 +22,7 @@ int lowerBound(vector<int> &arr, int n, int target)
         // if the mid element is greater than or equal to the target element then update the answer and search in the left half of the array
         if (arr[mid] >= target)
         {
-            ans = mid;
+            ans = mid; // update the answer with the current index
 
             // Look for the smaller index on the left
             high = mid - 1;
