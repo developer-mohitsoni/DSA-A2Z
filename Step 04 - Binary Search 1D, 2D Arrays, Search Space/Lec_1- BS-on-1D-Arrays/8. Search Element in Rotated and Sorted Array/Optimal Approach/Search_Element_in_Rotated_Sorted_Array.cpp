@@ -1,4 +1,4 @@
-//! Program to Search Element in Rotated and Sorted Array
+//! Program to Search Element in Rotated and Sorted Array [unique elements]
 
 #include <bits/stdc++.h>
 using namespace std;
