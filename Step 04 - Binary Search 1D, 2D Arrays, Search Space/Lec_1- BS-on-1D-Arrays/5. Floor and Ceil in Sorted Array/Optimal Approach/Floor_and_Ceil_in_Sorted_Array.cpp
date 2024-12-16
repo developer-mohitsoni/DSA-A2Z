@@ -1,9 +1,9 @@
-//! Program to find Floor and Ceil in Sorted Array using Optimal Force Approach
+//! Program to find Floor and Ceil in Sorted Array using Optimal Approach
 
 #include <bits/stdc++.h>
 using namespace std;
 
-//? ---------------------------- Optimal Force Approach ---------------------------
+//? ---------------------------- Optimal Approach ---------------------------
 
 //* T.C => O(logN)
 //* S.C => O(1)
