@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//? ---------------------------- Brute Force Approach ---------------------------
+//? ---------------------------- Optimal Force Approach ---------------------------
 
 //* T.C => O(logN)
 //* S.C => O(1)
