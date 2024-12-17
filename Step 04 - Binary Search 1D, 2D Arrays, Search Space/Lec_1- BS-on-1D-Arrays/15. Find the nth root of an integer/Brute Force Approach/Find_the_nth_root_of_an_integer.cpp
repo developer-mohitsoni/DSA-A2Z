@@ -6,7 +6,7 @@ using namespace std;
 //? ---------------------------- Brute Force Approach ---------------------------
 
 //* T.C => O(Nth Root(N)) for best and average case
-//* T.C => O(M) for worst case
+//* T.C => O(M*logn) for worst case
 //* S.C => O(1)
 
 //! NOTE: Binary Search is works only on sorted arrays
