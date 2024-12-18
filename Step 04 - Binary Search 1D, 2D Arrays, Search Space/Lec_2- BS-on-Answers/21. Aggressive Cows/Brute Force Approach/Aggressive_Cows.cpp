@@ -5,7 +5,9 @@ using namespace std;
 
 //? ---------------------------- Brute Force Approach ---------------------------
 
-//* T.C => O(max-min)*O(N)
+//* T.C => O(NlogN) + O(N *(max(stalls[])-min(stalls[])))
+
+// Reason:- O(NlogN) for sorting the array. We are using a loop from 1 to max(stalls[])-min(stalls[]) to check all possible distances. Inside the loop, we are calling canWePlace() function for each distance. Now, inside the canWePlace() function, we are using a loop that runs for N times.
 
 //* S.C => O(1)
 
