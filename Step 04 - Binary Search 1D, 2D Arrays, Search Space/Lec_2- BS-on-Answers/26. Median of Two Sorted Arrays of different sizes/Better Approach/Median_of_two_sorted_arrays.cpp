@@ -8,8 +8,7 @@ using namespace std;
 //* T.C =>  O(n1+n2)
 // Reason => We traverse through both arrays linearly.
 
-//* S.C => O(n1+n2)
-// Reason => We are using an extra array of size (n1+n2) to solve this problem.
+//* S.C => O(1)
 
 //! NOTE: Binary Search is works only on sorted arrays
 
