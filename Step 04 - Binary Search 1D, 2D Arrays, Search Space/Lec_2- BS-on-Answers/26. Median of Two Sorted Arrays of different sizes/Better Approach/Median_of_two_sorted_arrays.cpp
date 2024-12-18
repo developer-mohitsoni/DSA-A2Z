@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//? ---------------------------- Brute Force Approach ---------------------------
+//? ---------------------------- Better Force Approach ---------------------------
 
 //* T.C =>  O(n1+n2)
 // Reason => We traverse through both arrays linearly.
