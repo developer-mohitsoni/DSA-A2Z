@@ -5,9 +5,9 @@ using namespace std;
 
 //? ---------------------------- Brute Force Approach ---------------------------
 
-//* T.C =>  O(N * (sum(arr[])-max(arr[])+1))
+//* T.C =>  O(k*n) + O(n)
 
-//* S.C => O(1)
+//* S.C => O(n-1)
 
 //! NOTE: Binary Search is works only on sorted arrays
 
