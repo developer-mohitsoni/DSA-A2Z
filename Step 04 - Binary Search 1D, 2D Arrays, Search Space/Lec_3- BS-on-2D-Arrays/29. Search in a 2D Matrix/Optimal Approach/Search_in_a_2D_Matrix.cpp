@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//?------------------(Better Force Approach)------------------------------
+//?------------------(Optimal Approach)------------------------------
 
 //* T.C = O(log(NxM))
 
