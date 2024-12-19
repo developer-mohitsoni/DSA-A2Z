@@ -5,9 +5,9 @@ using namespace std;
 
 //?------------------(Better Force Approach)------------------------------
 
-//* T.C = O(N + logM)
+//* T.C = O(N*logM)
 
-// Reason => We are traversing all rows and it takes O(N) time complexity. But for all rows, we are not applying binary search rather we are only applying it once for a particular row. That is why the time complexity is O(N + logM) instead of O(N*logM).
+// Reason => We are traversing all rows and it takes O(N) time complexity. And for all rows, we are applying binary search. So, the total time complexity is O(N*logM).
 
 //* S.C is O(1).
 
