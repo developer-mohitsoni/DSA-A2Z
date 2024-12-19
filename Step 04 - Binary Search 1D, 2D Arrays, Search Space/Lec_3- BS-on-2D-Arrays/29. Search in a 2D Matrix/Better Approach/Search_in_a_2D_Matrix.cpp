@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//?------------------(Better Force Approach)------------------------------
+//?------------------(Better Approach)------------------------------
 
 //* T.C = O(N + logM)
 
