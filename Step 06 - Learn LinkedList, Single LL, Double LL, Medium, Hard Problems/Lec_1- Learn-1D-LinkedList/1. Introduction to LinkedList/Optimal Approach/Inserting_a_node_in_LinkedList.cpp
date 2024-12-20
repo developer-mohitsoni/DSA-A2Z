@@ -5,6 +5,10 @@ using namespace std;
 
 //? ---------------------------- Iterative Approach ---------------------------
 
+//* T.C => O(N) => to inserting every element in the linked list from the array.
+
+//* S.C => O(1) => constant space complexity
+
 //* Memory Space:-
 
 /*
