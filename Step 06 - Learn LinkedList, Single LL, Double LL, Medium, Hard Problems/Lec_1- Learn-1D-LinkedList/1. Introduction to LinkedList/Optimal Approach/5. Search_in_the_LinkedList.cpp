@@ -7,8 +7,10 @@ using namespace std;
 
 //* T.C =>
 // O(N) => for traversal in the linked list
+
 // O(N) => for returning the length of the linked list
-// O(N) => for searching an element in the linked list
+
+// O(N) => for searching an element in the linked list at worst case if element is not found, O(1)=> If element is found at the head of the linked list, O(N/2)=> If element is found b/w the linked list
 
 // TOTAL:- O(3N) => O(N)
 
