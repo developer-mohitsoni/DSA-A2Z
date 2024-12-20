@@ -43,10 +43,11 @@ public:
 // Function to print the linked list
 void printLL(Node *head)
 {
-    while (head != NULL)
+    Node *temp = head;
+    while (temp != nullptr)
     {
-        cout << head->data << " ";
-        head = head->next;
+        cout << temp->data << " ";
+        temp = temp->next;
     }
     cout << endl;
 }
