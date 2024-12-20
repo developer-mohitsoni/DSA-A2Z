@@ -1,4 +1,4 @@
-//! Into to Linked List Code
+//! Program to Inserting a Node in Linked List
 
 #include <bits/stdc++.h>
 using namespace std;
