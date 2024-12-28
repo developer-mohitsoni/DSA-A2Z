@@ -32,7 +32,6 @@ public:
         next = next;
     }
 
-public:
     Node(int data1)
     {
         data = data1;
