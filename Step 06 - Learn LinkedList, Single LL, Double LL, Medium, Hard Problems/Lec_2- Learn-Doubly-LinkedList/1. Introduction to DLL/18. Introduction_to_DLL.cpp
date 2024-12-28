@@ -17,9 +17,9 @@ using namespace std;
 class Node
 {
 public:
-    Node *back; // Pointer to the previous node in the linked list
+    Node *back; // Pointer to the previous node in the DLL
     int data;   // Data stored in the node
-    Node *next; // Pointer to the next node in the linked list
+    Node *next; // Pointer to the next node in the DLL
 
     // Constructors
 public:
@@ -55,6 +55,7 @@ int main()
 
     cout << "head: " << head << endl;
 
+    // here head->prev will be nullptr address
     cout << "head->prev: " << head->back << endl;
 
     cout << "head->data: " << head->data << endl;
