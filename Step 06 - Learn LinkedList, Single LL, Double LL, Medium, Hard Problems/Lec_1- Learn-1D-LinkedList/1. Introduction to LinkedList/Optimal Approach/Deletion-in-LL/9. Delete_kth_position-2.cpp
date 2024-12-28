@@ -44,8 +44,6 @@ public:
         data = data1;
         next = next;
     }
-
-public:
     Node(int data1)
     {
         data = data1;
@@ -158,6 +156,14 @@ Node *deleteKthPosition(Node *head, int kthPosition)
         }
         prev = temp;
         temp = temp->next;
+
+        // Out of bound conditions
+
+        if (cnt > lengthLL(head))
+        {
+            cout << "Position out of range. Cannot delete kth position." << endl;
+            return head;
+        }
     }
     return head;
 }

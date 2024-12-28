@@ -40,8 +40,6 @@ public:
         data = data1;
         next = next;
     }
-
-public:
     Node(int data1)
     {
         data = data1;
