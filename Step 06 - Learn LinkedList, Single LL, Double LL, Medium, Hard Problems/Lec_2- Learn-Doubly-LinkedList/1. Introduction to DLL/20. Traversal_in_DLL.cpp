@@ -73,12 +73,12 @@ int main()
 
     // Creating the linked list from user input
     Node *head = new Node(arr[0]);
-    Node *current = head;
+    Node *prev = head;
     for (int i = 1; i < n; i++)
     {
-        current->next = new Node(arr[i]);
-        current->next->back = current; // Correctly assign the back pointer
-        current = current->next;
+        Node *temp = new Node(arr[i], nullptr, prev);
+        prev->next = temp;
+        prev = temp;
     }
 
     // Printing the Doubly linked list
