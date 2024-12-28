@@ -44,8 +44,6 @@ public:
         data = data1;
         next = next;
     }
-
-public:
     Node(int data1)
     {
         data = data1;
@@ -124,11 +122,19 @@ Node *insertAtKthPosition(Node *head, int data, int k)
             return new Node(data);
         }
         else
+        {
+            cout << "Invalid position. Cannot insert at position " << k << "." << endl;
             return head;
+        }
     }
 
     if (k == 1)
-        return new Node(data, head);
+    {
+        Node *newNode = new Node(data);
+        newNode->next = head;
+
+        return newNode;
+    }
 
     int cnt = 0;
 
@@ -140,18 +146,16 @@ Node *insertAtKthPosition(Node *head, int data, int k)
 
         if (cnt == k - 1)
         {
-            Node *newNode = new Node(data, temp->next);
+            Node *newNode = new Node(data);
+            newNode->next = temp->next;
             temp->next = newNode;
             break;
         }
         temp = temp->next;
-
-        if (temp == nullptr)
-        {
-            cout << "Invalid position. Cannot insert at position " << k << "." << endl;
-            return head;
-        }
     }
+
+    // Case 3: K is out of bounds
+    cout << "Invalid position. Cannot insert at position " << k << "." << endl;
     return head;
 }
 

@@ -44,8 +44,6 @@ public:
         data = data1;
         next = next;
     }
-
-public:
     Node(int data1)
     {
         data = data1;
@@ -123,10 +121,12 @@ Node *insertAtKthPosition(Node *head, int data, int k)
     {
         if (k == 1)
         {
-            return new Node(data);
+            return newNode;
         }
         else
         {
+            cout << "Position " << k << " is out of bounds!" << endl;
+            delete newNode;
             return NULL;
         }
     }
@@ -142,7 +142,7 @@ Node *insertAtKthPosition(Node *head, int data, int k)
     int count = 1;
 
     // Traverse the list to find (k-1)-th node
-    while (temp->next != nullptr && count < k - 1)
+    while (temp != nullptr && count < k - 1)
     {
         temp = temp->next;
         count++;
