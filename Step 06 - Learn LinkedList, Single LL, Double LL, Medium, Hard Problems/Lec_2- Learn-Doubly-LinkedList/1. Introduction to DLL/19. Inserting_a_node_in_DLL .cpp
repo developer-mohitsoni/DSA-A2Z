@@ -1,4 +1,4 @@
-//! Program to Inserting a Node in Linked List
+//! Program to Inserting a Node in Doubly Linked List
 
 #include <bits/stdc++.h>
 using namespace std;

@@ -1,4 +1,4 @@
-//! Into to Linked List Code
+//! Program to traverse the Node in Linked List
 
 #include <bits/stdc++.h>
 using namespace std;
