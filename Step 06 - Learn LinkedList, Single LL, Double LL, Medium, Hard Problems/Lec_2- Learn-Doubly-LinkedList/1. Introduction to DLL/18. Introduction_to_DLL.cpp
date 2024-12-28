@@ -17,13 +17,15 @@ using namespace std;
 class Node
 {
 public:
+    Node *back; // Pointer to the previous node in the linked list
     int data;   // Data stored in the node
     Node *next; // Pointer to the next node in the linked list
 
     // Constructors
 public:
-    Node(int data1, Node *next)
+    Node(int data1, Node *next, Node *back)
     {
+        back = back;
         data = data1;
         next = next;
     }
@@ -31,8 +33,9 @@ public:
 public:
     Node(int data1)
     {
+        back = nullptr; // Pointer to the previous
         data = data1;
-        next = nullptr; // nullptr
+        next = nullptr; // Pointer to the next
     }
 };
 
@@ -47,10 +50,12 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    // Node *head = new Node(arr[0], nullptr);
+    // Node *head = new Node(arr[0], nullptr, nullptr);
     Node *head = new Node(arr[0]);
 
     cout << "head: " << head << endl;
+
+    cout << "head->prev: " << head->back << endl;
 
     cout << "head->data: " << head->data << endl;
 
