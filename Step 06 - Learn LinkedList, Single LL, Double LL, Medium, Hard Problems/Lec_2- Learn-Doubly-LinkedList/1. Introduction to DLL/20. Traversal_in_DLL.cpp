@@ -42,7 +42,7 @@ public:
 };
 
 // Function to print the linked list
-void printLL(Node *head)
+void printDLL(Node *head)
 {
     Node *temp = head;
     while (temp != nullptr)
@@ -83,7 +83,7 @@ int main()
 
     // Printing the Doubly linked list
     cout << "Doubly Linked list after insertion: ";
-    printLL(head);
+    printDLL(head);
 
     return 0;
 }
