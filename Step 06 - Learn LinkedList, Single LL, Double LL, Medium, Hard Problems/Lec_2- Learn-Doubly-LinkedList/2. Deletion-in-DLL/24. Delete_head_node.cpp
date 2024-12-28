@@ -101,17 +101,20 @@ void searchElement(Node *head, int element)
 
 Node *headDeletion(Node *head)
 {
-    if (head == nullptr)
+    if (head == nullptr || head->next == nullptr)
     {
         cout << "List is empty, cannot delete head." << endl;
         return head;
     }
     else
     {
-        Node *temp = head;
+        Node *prev = head;
         head = head->next;
+
         head->back = nullptr;
-        delete temp;
+        prev->next = nullptr;
+
+        delete prev;
         cout << "Head node deleted successfully." << endl;
     }
     return head;
