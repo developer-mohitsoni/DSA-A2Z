@@ -1,11 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 // Functions are set of code which performs something for you.
 // Functions are used to modularise code.
 // Functions are used to increase readibility.
 // Functions are used to use same code multiple time.
-
 
 // Returning Function Pass By Reference (Returning Float)
 
@@ -14,11 +13,13 @@ The error in the code is that the doSomething() function returns a copy of the n
 
 To fix this error, the doSomething() function should return a reference to the num parameter, instead of a copy of the parameter. This can be done by declaring the num parameter as a reference in the function declaration.
 */
-float &doSomething(float &num){ /*Reference comes*/
+float &doSomething(float &num)
+{ /*Reference comes*/
 
     /*These all are modification in the original value*/
 
-    if(num <=10.25){
+    if (num <= 10.25)
+    {
         num += 5.50;
         return num;
     }
@@ -26,14 +27,15 @@ float &doSomething(float &num){ /*Reference comes*/
     return num;
 }
 
-int main(){
+int main()
+{
     float num;
 
-    cin>>num;
+    cin >> num;
 
-    float store = doSomething(num); /* original number address goes*/
+    doSomething(num) = 10.20; // num ka reference return ho raha hai, toh num = 10.20 ho jayega
 
-    cout<<store<<endl; /*Print Depend on the Input value*/
-    
+    cout << num << endl; /*Print Depend on the Input value*/
+
     return 0;
 }
