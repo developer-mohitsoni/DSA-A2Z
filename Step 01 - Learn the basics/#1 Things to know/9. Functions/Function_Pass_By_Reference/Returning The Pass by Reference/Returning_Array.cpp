@@ -1,58 +1,26 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-// int* passAndReturnArray(int arr[], int size) {
-// Both line are same
-
-int *passAndReturnArray(int *arr, int size)
+array<int, 5> &modifyArray(array<int, 5> &arr)
 {
-  // Modify the array elements
-  for (int i = 1; i <= size; i++)
+  for (int &num : arr)
   {
-    arr[i] += 10;
+    num *= 2;
   }
-
-  // Return a pointer to the modified array
   return arr;
 }
 
 int main()
 {
-  int size = 10;
+  array<int, 5> myArray = {1, 2, 3, 4, 5};
 
-  // Allocate memory for the array 10 size
+  array<int, 5> &modifiedArray = modifyArray(myArray);
 
-  // new int[size] dynamically memory allocate karta hai size ke equal integer elements ke liye.
-  // Yeh pointer arr memory block ka first address rakhta hai
-  int *arr = new int[size];
-
-  // Initialize the array elements
-
-  // Yeh for loop array ke elements ko initialize karta hai.
-  // arr[i] = i har index par uska index number assign karta hai.
-  for (int i = 1; i <= size; i++)
+  cout << "Modified array: ";
+  for (int num : modifiedArray)
   {
-
-    // Note: Yeh initialization 1-based indexing se shuru hota hai, toh arr[0] garbage value rakhta hai.
-    arr[i] = i;
+    cout << num << " ";
   }
-  // Here we don't assign any value in arr[0] so, it contains some garbage value
-  cout << arr[0] << " " << arr[1] << " " << endl;
-
-  // Pass the array to the function and get the modified array back
-  int *modifiedArray = passAndReturnArray(arr, size); /*This modifiedArray now becomes the Array*/
-
-  // Print the modified array elements
-  for (int i = 1; i <= size; i++)
-  {
-    cout << modifiedArray[i] << " ";
-  }
-  cout << endl;
-
-  // Delete the allocated memory
-  delete[] modifiedArray;
-  delete[] arr;
 
   return 0;
 }
