@@ -35,7 +35,7 @@ int main()
 
     doSomething(num) = 10.20; // num ka reference return ho raha hai, toh num = 10.20 ho jayega
 
-    cout << num << endl; /*Print Depend on the Input value*/
+    cout << num << endl;
 
     return 0;
 }
