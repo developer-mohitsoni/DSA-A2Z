@@ -14,6 +14,11 @@ int main()
 
     int sum = 0;
 
+    // 5432 lastDigit = 2
+    // then 0 + pow(2, 4) = 16
+    // then 16 + pow(3, 4) = 16 + 81 = 97
+    // then 97 + pow(4, 4) = 97 + 256 = 353
+    // then 353 + pow(5, 4) = 353 + 625 = 978
     while (temp > 0)
     {
         int lastDigit = temp % 10;
