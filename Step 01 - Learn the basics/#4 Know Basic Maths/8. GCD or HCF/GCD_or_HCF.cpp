@@ -18,6 +18,16 @@ int main()
 
     int gcd;
 
+    // Suppose n1 = 12 and n2 = 15
+    // Then we will check from 1 to min(n1, n2)
+    // If n1 % i == 0 and n2 % i == 0, then i is a divisor of both n1 and n2
+    // For example, if n1 = 12 and n2 = 15, then the common divisors are 1 and 3
+    // We will print all such common divisors
+    // We will loop from 1 to min(n1, n2) and check if n1 % i == 0 and n2 % i == 0
+    // If it is true, we will assign i to gcd and break the loop
+    // This is because we want to find the greatest common divisor (GCD) or highest common factor (HCF)
+    // The GCD/HCF is the largest number that divides both n1 and n2
+
     for (int i = 1; i <= min(n1, n2); i++)
     {
         if (n1 % i == 0 && n2 % i == 0)
