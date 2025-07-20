@@ -15,7 +15,9 @@ int *passAndReturnArray(int *arr, int size)
 
 int main()
 {
-  int size = 10;
+  int size;
+  cout << "Enter the size of the array: ";
+  cin >> size;
 
   // Allocate memory for the array
   int *arr = new int[size];
@@ -23,7 +25,7 @@ int main()
   // Initialize the array elements
   for (int i = 0; i < size; i++)
   { // Fixed indexing from 0
-    arr[i] = i + 1;
+    cin >> arr[i];
   }
 
   // Pass the array to the function and get the modified array back
