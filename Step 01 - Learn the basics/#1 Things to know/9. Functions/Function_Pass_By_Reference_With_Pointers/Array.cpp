@@ -11,29 +11,33 @@ using namespace std;
 
 
 // Pass By Reference with Pointers
-void doubling(int *arr){
+void doubling(int *arr, int size){
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<size; i++){
         arr[i] *= 2;
     }
 }
 
 int main(){
-    int arr[5];
+    int n;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+
+    int *arr = new int[n]; // Dynamically allocated memory for an array of integers
 
     cout<<"Enter The Elements:- "<<endl;
-    for(int i=0; i<5; i++){
+    for(int i=0; i<n; i++){
         cin>>arr[i];
     }
 
     cout<<"Before Doubling the Digits in Each Element: "<<endl;
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
 
     /*These below 3 all are same to pass as an address of arr*/
-    doubling(arr);
+    doubling(arr, n);
     // doubling(&arr[0]);
     // doubling(arr+0);
 
@@ -41,7 +45,7 @@ int main(){
 
     cout<<"After Doubling the Digits in Each Element: "<<endl;
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
 

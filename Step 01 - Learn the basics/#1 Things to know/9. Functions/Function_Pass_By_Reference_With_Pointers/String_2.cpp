@@ -27,11 +27,13 @@ void doSomething(string *s)
 
 int main()
 {
-  string s = "Mohit";
+  string *s = new string("Striver DSA A-Z Series"); // Dynamically allocated memory for a string object
 
-  doSomething(&s); // Pass a pointer to the string object to the function
+  doSomething(s); // Pass a pointer to the string object to the function
 
   cout << s << endl; // Print the original string object
+
+  delete s; // Free the dynamically allocated memory
 
   return 0;
 }

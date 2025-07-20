@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 // Functions are set of code which performs something for you.
@@ -6,28 +6,31 @@ using namespace std;
 // Functions are used to increase readibility.
 // Functions are used to use same code multiple time.
 
-
 // Pass By Reference with Pointers
-void doSomething(int *num){ /*Original value comes*/
+void doSomething(int *num)
+{ /*Original value comes*/
 
     /*These all are modification in the original value*/
-    cout<<*num<<endl;
+    cout << *num << endl;
 
     *num += 5;
 
-    cout<<*num<<endl;
+    cout << *num << endl;
 
     *num += 5;
 
-    cout<<*num<<endl;
+    cout << *num << endl;
 }
 
-int main(){
-    int num = 10;
+int main()
+{
+    int *p = new int(10); // Dynamically allocated memory for an integer
 
-    doSomething(&num); /*original number address goes*/
+    doSomething(p); /*original number address goes*/
 
-    cout<<num<<endl; /*Now it print 20*/
+    cout << *p << endl; /*Now it print 20*/
+
+    delete p; // Free the dynamically allocated memory
 
     return 0;
 }
