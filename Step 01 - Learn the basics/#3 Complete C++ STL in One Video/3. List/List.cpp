@@ -13,7 +13,7 @@ void explainList(){
 
     // Display the elements of the list
     cout << "The elements of the list are: ";
-    for (int num : myList) {
+    for (auto num : myList) {
         cout << num << " ";
     }
 
