@@ -49,9 +49,9 @@ int main()
     it3 = it3 + 2;          /*This will point to the memeory address of first element + 2 i.e v(2) */
     cout << *(it3) << endl; /*Output:- 6*/
 
-    for (int i = 0; i < v8.size(); i++)
+    for (size_t i = 0; i < v8.size(); i++)
     {
-        cout << *(it3 + i) << " ";
+        cout << it3[i] << " "; // Using arithmetic pointer as:- *(it3 + i)
     }
     /*Output:- 2 4 6 8 10*/
 

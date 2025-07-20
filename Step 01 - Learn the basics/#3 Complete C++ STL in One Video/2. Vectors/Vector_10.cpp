@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main()
+{
 
     // Accessing all elements of a vector;
 
@@ -13,30 +14,33 @@ int main(){
     v9.push_back(25);
 
     // Using Loop:-
-    int n=v9.size();
+    int n = v9.size();
 
-    for(int i=0; i<n; i++){
-        cout<<v9[i]<<" ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << v9[i] << " ";
     }
 
-    cout<<endl;
+    cout << endl;
 
     // Using Iterator:-
 
-    vector<int>::iterator it=v9.begin();
+    vector<int>::iterator it = v9.begin();
 
-    for(int i=0; i<n; i++){
-        cout<<*(it+i)<<" ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << it[i] << " ";
     }
 
-    cout<<endl;
+    cout << endl;
 
     // Using iterator inside loop:-
-    for(vector<int>::iterator it2=v9.begin(); it2!=v9.end(); it2++){
-        cout<<*(it2)<<" ";
+    for (vector<int>::iterator it2 = v9.begin(); it2 != v9.end(); it2++)
+    {
+        cout << *(it2) << " ";
     }
 
-    cout<<endl;
+    cout << endl;
 
     // Another way of using iterator:-
     /*
@@ -47,19 +51,20 @@ int main(){
 
     auto it4 = v9.begin();
 
-    advance(it4,3);  // Moving the iterator to 4th position from beginning
-    cout<<*it4<<endl;   // Printing the element at 4th
+    advance(it4, 3);      // Moving the iterator to 4th position from beginning
+    cout << *it4 << endl; // Printing the element at 4th
 
-    
-    for(auto it4=v9.begin(); it4!=v9.end(); it4++){
-        cout<<*(it4)<<" ";
+    for (auto it4 = v9.begin(); it4 != v9.end(); it4++)
+    {
+        cout << *(it4) << " ";
     }
 
-    cout<<endl;
+    cout << endl;
 
     // Using for each loop:-
-    for(auto it : v9){
-        cout<< it <<" ";
+    for (auto it : v9)
+    {
+        cout << it << " ";
     }
 
     return 0;
