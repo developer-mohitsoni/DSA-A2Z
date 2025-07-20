@@ -33,9 +33,9 @@ int main()
 
     getline(cin, str); // To take input with spaces
 
-    string store = doSomething(str); /* original string address goes*/
+    doSomething(str) = "jabeli"; /* original string address goes*/
 
-    cout << store << endl; /*Print Depend on the Input value*/
+    cout << str << endl; /*Print Depend on the Input value*/
 
     return 0;
 }
