@@ -20,12 +20,16 @@ vector<long long> factorialNumbers(long long n)
 
     // For example, agar n = 120 hai, toh n / 2 + 1 = 60 + 1 = 61. Matlab loop maximum i = 61 tak chal sakta hai. Lekin hum dekhte hain ki fact(5) = 120 ke baad, factorials bohot bade ho jate hain, jaise fact(6) = 720, toh loop kabhi 61 tak jaane ki zarurat nahi padti.
 
+    // n/2 +1 tak hi ku chna hai, kyunki factorials bohot tezi se badhte hain. Agar n = 120 hai, toh fact(5) = 120 ke baad fact(6) = 720 ho jata hai, jo n se bada hai. Isliye hum n/2 + 1 tak hi chalte hain.
+    // Isse humein sirf un factorials ki list milegi jo n se chhote ya barabar hain.
+    // Iska matlab hai ki hum sirf un factorial numbers ko consider kar rahe hain jo n se zyada nahi hain, aur yeh approach efficient hai kyunki factorials bohot tezi se badhte hain.
+
     for (long long i = 1; i <= n / 2 + 1; i++)
     {
         x = fact(i);
 
         if (x > n)
-            return ans;
+            return ans; // Yadi factorial number n se bada ho jata hai, toh hum loop ko yahin rok dete hain kyunki aage ke factorials bhi n se bade honge.
         else
             ans.push_back(x);
     }
