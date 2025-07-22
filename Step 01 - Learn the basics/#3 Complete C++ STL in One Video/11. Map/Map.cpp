@@ -2,51 +2,36 @@
 using namespace std;
 
 void explainMap(){
-
-    // Showing Map as:- map<key,value>mp;
-
-    map<int,int>mpp;
-
-    map<int,pair<int,int>>mpp;
-
-    map<pair<int,int>,int> mpp;
-
-
-    mpp[1] = 2;
-
-    mpp.emplace({3,1}); //insert a pair of data in the map
-    mpp.insert({2,4});
-
-    mpp[{2,3}] = 10;
-
-    // {
-    //     {1,2}
-    //     {2,4}
-    //     {3,1}
-    // }
-
-    for(auto it : mpp){
-        cout<<it.first<<" "<<it.second<<endl;
+    // Declare a map
+    map<int, int> mpp;
+    
+    // Insert elements (key-value pairs)
+    mpp[1] = 100;      // key: 1, value: 100
+    mpp[2] = 200;      // key: 2, value: 200
+    mpp[5] = 500;      // key: 5, value: 500
+    
+    // Another way to insert
+    mpp.insert({3, 300});  // key: 3, value: 300
+    
+    // Access elements
+    cout << "Value at key 2: " << mpp[2] << endl;
+    
+    // Iterate through the map
+    cout << "All key-value pairs:" << endl;
+    for(auto &pair : mpp) {
+        cout << "Key: " << pair.first << ", Value: " << pair.second << endl;
     }
-
-    cout<<mpp[1];
-    cout<<mpp[5];
-
-    auto it1 = mpp.find(3);
-    cout<<(it1)->second;
-
-    auto it2 = mpp.find(5);
-
-    // This is the syntax
-    auto it = mpp.lower_bound(2);
-    auto it = mpp.upper_bound(3);
-
-
-    // erase,swap,size,empty, are same as Set
-
-
-
-
+    
+    // Check if a key exists
+    if(mpp.find(5) != mpp.end()) {
+        cout << "Key 5 exists" << endl;
+    }
+    
+    // Size of map
+    cout << "Size of map: " << mpp.size() << endl;
+    
+    // Erase a key
+    mpp.erase(2);
 }
 int main(){
     // What is Map in STL

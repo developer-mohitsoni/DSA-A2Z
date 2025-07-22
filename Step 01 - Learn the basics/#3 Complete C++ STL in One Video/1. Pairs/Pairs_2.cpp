@@ -18,9 +18,10 @@ void explainPair()
     cout << arr[1].first << endl;
     cout << arr[1].second << endl;
 
-    for (int i = 0; i < 3; i++)
+    // How to access nested pairs in easy way?
+    for (auto &i : arr)
     {
-        cout << arr[i].first << " " << arr[i].second << endl;
+        cout << i.first << " " << i.second << endl;
     }
 
     pair<int, pair<int, int>> arr2[] = {{1, {1, 2}}, {2, {3, 4}}};

@@ -1,8 +1,9 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    set<int>st;
+int main()
+{
+    set<int> st;
 
     st.insert(75);
     st.emplace(23);
@@ -11,12 +12,17 @@ int main(){
     st.insert(42);
     st.insert(13);
 
-    cout<<"Set Contains: ";
+    cout << "Set Contains: ";
 
-    while(!st.empty()){
-        cout<<*st.begin()<<" ";
+    while (!st.empty())
+    {
+        cout << *st.begin() << " ";
         st.erase(st.begin());
     }
+
+    // for(auto it: st){
+    //     cout<<it<<" ";
+    // }
 
     return 0;
 }

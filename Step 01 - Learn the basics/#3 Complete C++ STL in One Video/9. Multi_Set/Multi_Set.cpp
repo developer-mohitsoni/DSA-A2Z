@@ -9,7 +9,7 @@ void explainMultiSet()
     multiset<int> ms;
 
     ms.insert(1); // {1}
-    ms.insert(1); // {1,}
+    ms.insert(1); // {1,1}
     ms.insert(1); // {1,1,1}
 
     ms.erase(1); // all 1's erased
