@@ -14,11 +14,12 @@ int main()
 
     int sum = 0;
 
-    // 5432 lastDigit = 2
-    // then 0 + pow(2, 4) = 16
-    // then 16 + pow(3, 4) = 16 + 81 = 97
-    // then 97 + pow(4, 4) = 97 + 256 = 353
-    // then 353 + pow(5, 4) = 353 + 625 = 978
+    // 153 lastDigit = 3
+    // then 0 + pow(3, 3) = 27
+    // then 27 + pow(5, 3) = 27 + 125 = 152
+    // then 152 + pow(1, 3) = 152 + 1 = 153
+    // 153 is an Armstrong number because 1^3 + 5^3 + 3^3 = 153
+    // 123 is not an Armstrong number because 1^3 + 2^3 + 3^3 = 36 != 123
     while (temp > 0)
     {
         int lastDigit = temp % 10;
