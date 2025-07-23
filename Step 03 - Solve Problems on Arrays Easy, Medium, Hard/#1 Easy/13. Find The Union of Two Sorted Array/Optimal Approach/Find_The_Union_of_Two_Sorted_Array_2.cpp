@@ -18,10 +18,14 @@ vector<int> unionOfTwoSortedArray(vector<int> &v1, vector<int> &v2)
     int i = 0;
     int j = 0;
 
+    // Traverse both arrays until we reach the end of either array
+    // Compare the elements of both arrays and add the smaller one to the union array
     while (i < n1 && j < n2)
     {
-        if (v1[i] <= v2[j])
+        if (v1[i] <= v2[j])     // Compare the elements of both arrays
         {
+            // If the element is not already present in the union array, add it to the union array
+            // This check is done to avoid duplicates in the union array
             if (unionTwoSortedArray.size() == 0 || unionTwoSortedArray.back() != v1[i])
             {
                 unionTwoSortedArray.push_back(v1[i]);
@@ -30,6 +34,8 @@ vector<int> unionOfTwoSortedArray(vector<int> &v1, vector<int> &v2)
         }
         else
         {
+            // If the element is not already present in the union array, add it to the union array
+            // This check is done to avoid duplicates in the union array
             if (unionTwoSortedArray.size() == 0 || unionTwoSortedArray.back() != v2[j])
             {
                 unionTwoSortedArray.push_back(v2[j]);
@@ -38,6 +44,7 @@ vector<int> unionOfTwoSortedArray(vector<int> &v1, vector<int> &v2)
         }
     }
 
+    // If there are remaining elements in either of the arrays, add them to the union array
     while (j < n2)
     {
         if (unionTwoSortedArray.size() == 0 || unionTwoSortedArray.back() != v2[j])

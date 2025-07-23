@@ -22,7 +22,7 @@ void rightRotateByD(vector<int> &v, int D)
     vector<int> temp; // Create a temporary array to store the first D elements of the original array
 
     // Iterate through D to n-1 elements of the original array
-    for (int i = D + 1; i < n; i++) // T.C is O(n-d)
+    for (int i = n - 1; i >= n - D; i--) // T.C is O(n-d)
     {
         // Push each element into the temporary array
         temp.push_back(v[i]);
@@ -30,7 +30,7 @@ void rightRotateByD(vector<int> &v, int D)
 
     // Iterate through the remaining elements of the original array
 
-    for (int i = n - 1; i >= D; i--) // T.C is O(d)
+    for (int i = n - 1; i >= D - 1; i--) // T.C is O(d)
     {
         // Shift each element to the right by D places
         v[i] = v[i - D];
@@ -39,8 +39,7 @@ void rightRotateByD(vector<int> &v, int D)
     // Iterate through the first D elements of the original array
     for (int i = 0; i < D; i++) // T.C is O(d)
     {
-        // Assign each element from the temporary array to the corresponding position in the original array
-        v[i] = temp[i];
+        v[i] = temp[temp.size() - 1 - i]; // Assign each element from the temporary array to the corresponding position in the original array
     }
 }
 

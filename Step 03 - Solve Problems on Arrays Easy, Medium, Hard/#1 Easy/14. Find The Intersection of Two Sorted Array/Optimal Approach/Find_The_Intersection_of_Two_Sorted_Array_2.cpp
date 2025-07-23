@@ -21,16 +21,21 @@ vector<int> intersectionOfTwoSortedArray(vector<int> &v1, vector<int> &v2)
 
     while (i < n1 && j < n2)
     {
+        // If the elements are equal, add it to the intersection array
+        // and move both pointers forward
         if (v1[i] == v2[j])
         {
             intersectionOfTwoSortedArray.push_back(v1[i]);
             i++;
             j++;
         }
+        // If the element in v1 is less than the element in v2, move the pointer of v1 forward
+        // Otherwise, move the pointer of v2 forward
         else if (v1[i] < v2[j])
         {
             i++;
         }
+        // If the element in v1 is greater than the element in v2, move the pointer of v2 forward
         else
         {
             j++;

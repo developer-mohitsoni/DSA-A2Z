@@ -27,6 +27,10 @@ vector<int> intersectionOfTwoSortedArray(vector<int> &v1, vector<int> &v2)
                 visitedArray[j] = 1;
                 break;
             }
+            if (v1[i] < v2[j])
+            {
+                break; // Since both arrays are sorted, we can break the loop if v1[i] is less than v2[j]
+            }
         }
     }
     return intersectionOfTwoSortedArray;

@@ -24,10 +24,10 @@ int appearsOnce(vector<int> &v)
         hash[v[i]]++;
     }
 
-    for (int i = 0; i < n; i++) // T.C is O(n)
+    for (int i = 0; i < max_Element; i++)
     {
-        if (hash[v[i]] == 1)
-            appearsOnce = v[i];
+        if (hash[i] == 1)
+            appearsOnce = i;
     }
     return appearsOnce;
 }

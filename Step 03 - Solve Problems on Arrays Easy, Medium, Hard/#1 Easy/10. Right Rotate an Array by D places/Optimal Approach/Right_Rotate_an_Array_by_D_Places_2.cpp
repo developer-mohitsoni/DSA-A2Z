@@ -28,8 +28,8 @@ void rightRotateByD(vector<int> &v, int D)
 
     D = D % n;
 
-    reverse(v, 0, D);         // Reverse the first n-D elements // T.C is O(D)
-    reverse(v, D + 1, n - 1); // Reverse the remaining n-D elements // T.C is O(n-D)
+    reverse(v, 0, n-1-D);         // Reverse the first n-D elements // T.C is O(D)
+    reverse(v, n-D, n - 1); // Reverse the remaining n-D elements // T.C is O(n-D)
     reverse(v, 0, n - 1);     // Reverse the whole array // T.C is O(n)
 }
 

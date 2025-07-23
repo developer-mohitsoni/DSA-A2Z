@@ -29,18 +29,18 @@ void leftRotateByD(vector<int> &v, int D)
     }
 
     // Iterate through the remaining elements of the original array
-    for (int i = D; i < n; i++) // T.C is O(n-d)
+    for (int i = 0; i <= n - D - 1; i++) // T.C is O(n-d)
     {
-        // Shift each element to the left by D places
-        v[i - D] = v[i];
+        // Assign each element from the original array to the corresponding position in the original array
+        v[i] = v[i + D]; // Shift the elements to the left by D places
     }
 
     // Iterate through the last D elements of the original array
-    for (int i = D+1; i < n; i++) // T.C is O(d)
+    for (size_t i = 0; i < temp.size(); i++) // T.C is O(temp.size()) which is O(d)
     {
         // Assign each element from the temporary array to the corresponding position in the original array
-        v[i] = temp[i - (n - D)];
-    }   
+        v[n - D + i] = temp[i];
+    }
 }
 
 int main()
