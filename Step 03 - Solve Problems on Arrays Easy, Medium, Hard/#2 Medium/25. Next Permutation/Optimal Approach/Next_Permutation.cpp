@@ -34,7 +34,7 @@ void nextPermuation(vector<int> &v)
         if (v[i] > v[index])
         {
             swap(v[i], v[index]);
-            break;
+            break;  
         }
     }
 
