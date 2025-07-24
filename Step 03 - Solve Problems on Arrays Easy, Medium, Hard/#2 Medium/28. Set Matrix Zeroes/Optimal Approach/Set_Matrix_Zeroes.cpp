@@ -10,8 +10,8 @@ using namespace std;
 
 void setMatrixZeroes(vector<vector<int>> &matrix, int n, int m)
 {
-    // int row[n] = {0}; : -> matrix[0][..]
-    // int column[m] = {0}; : -> matrix[..][0]
+    // int row[n] = {0}; : -> matrix[..][0]
+    // int column[m] = {0}; : -> matrix[0][..]
 
     int col0 = 1;
 

@@ -23,7 +23,7 @@ int subArraySumEqualK(vector<int> &v, int K)
     {
         preSum += v[i];
 
-        int remove = preSum - K;
+        int remove = preSum -   K;
 
         count += mpp[remove];
 
