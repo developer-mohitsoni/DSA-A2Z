@@ -13,6 +13,26 @@ using namespace std;
 
 //! NOTE: Binary Search is works only on sorted arrays
 
+// Can you explain this below function with simple dry run?
+//* This function calculates the number of days required to ship packages given a weight capacity.
+//* It iterates through the weights and checks if adding the current weight exceeds the capacity.
+//* If it does, it increments the day count and resets the load to the current weight.
+
+// Simple Dry Run Example:
+//* Given weights = [1, 2, 3, 4, 5]
+//* and capacity = 5:
+//* - Start with day = 1, load = 0
+//* - Add 1 to load (load = 1)
+//* - Add 2 to load (load = 3)
+//* - Add 3 to load (load = 6, exceeds capacity)
+//* - Increment day to 2, reset load to 3 (load = 3)
+//* - Add 4 to load (load = 7, exceeds capacity)
+//* - Increment day to 3, reset load to 4 (load = 4)
+//* - Add 5 to load (load = 9, exceeds capacity)
+//* - Increment day to 4, reset load to 5 (load = 5)
+
+//* Result: 4 days are needed to ship all packages with the given capacity. */
+
 int findDays(vector<int> &weights, int cap)
 {
     int days = 1; // First day.
