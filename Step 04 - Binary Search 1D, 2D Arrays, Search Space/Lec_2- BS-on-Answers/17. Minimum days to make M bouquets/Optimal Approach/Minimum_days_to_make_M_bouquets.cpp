@@ -5,7 +5,7 @@ using namespace std;
 
 //? ---------------------------- Brute Force Approach ---------------------------
 
-//* T.C => O(log(max(arr[])-min(arr[])+1) * N)
+//* T.C => [O(N)* log(max_element)]
 
 //* Reason => We are applying binary search on our answers that are in the range of [min(arr[]), max(arr[])]. For every possible answer ‘mid’, we will call the possible() function. Inside the possible() function, we are traversing the entire array, which results in O(N).
 
