@@ -5,7 +5,7 @@ using namespace std;
 
 //? ---------------------------- Brute Force Approach ---------------------------
 
-//* T.C => [O(N)* log(max_element)]
+//* T.C => [O(N)* log(max_element-min_element) + 1]
 
 //* Reason => We are applying binary search on our answers that are in the range of [min(arr[]), max(arr[])]. For every possible answer ‘mid’, we will call the possible() function. Inside the possible() function, we are traversing the entire array, which results in O(N).
 
@@ -21,16 +21,26 @@ bool possible(vector<int> &arr, int day, int m, int k)
     // count the number of bouquets:
     for (int i = 0; i < n; i++)
     {
+        // if the flower is available on or before the given day
+        // then we can use it to make a bouquet
         if (arr[i] <= day)
         {
+            // increase the count of flowers available
+            // on or before the given day
             cnt++;
         }
         else
         {
+            // if the flower is not available on or before the given day
+            // then we can make bouquets with the flowers available
             noOfB += (cnt / k);
+            // reset the count of flowers available
+            // on or before the given day
             cnt = 0;
         }
     }
+    // if there are still flowers available after the last flower
+    // then we can make bouquets with those flowers as well
     noOfB += (cnt / k);
     return noOfB >= m;
 }
