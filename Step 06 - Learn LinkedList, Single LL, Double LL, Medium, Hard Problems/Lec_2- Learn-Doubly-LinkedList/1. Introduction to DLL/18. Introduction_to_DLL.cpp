@@ -23,19 +23,19 @@ public:
 
     // Constructors
 public:
-    Node(int data1, Node *next, Node *back)
+    Node(int data, Node *next, Node *back)
     {
-        back = back;
-        data = data1;
-        next = next;
+        this->back = back;
+        this->data = data;
+        this->next = next;
     }
 
 public:
-    Node(int data1)
+    Node(int data)
     {
-        back = nullptr; // Pointer to the previous
-        data = data1;
-        next = nullptr; // Pointer to the next
+        this->back = nullptr; // Pointer to the previous
+        this->data = data;
+        this->next = nullptr; // Pointer to the next
     }
 };
 

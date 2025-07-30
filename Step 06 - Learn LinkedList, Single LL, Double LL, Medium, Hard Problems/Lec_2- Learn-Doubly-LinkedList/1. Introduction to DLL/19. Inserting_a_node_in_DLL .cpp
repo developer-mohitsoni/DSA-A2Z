@@ -26,10 +26,10 @@ public:
     Node *next; // Pointer to the next node in the DLL
 
     // Constructors
-    Node(int data1, Node *next, Node *back)
+    Node(int data, Node *next, Node *back)
     {
         this->back = back;
-        this->data = data1;
+        this->data = data;
         this->next = next;
     }
 
