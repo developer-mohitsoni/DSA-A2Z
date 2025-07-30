@@ -64,5 +64,11 @@ int main()
     cout << "head->next->next->data => " << head->next->next->data
          << endl;
 
+    delete head; // Free the memory allocated for the head node
+    // Note: In a complete implementation, you would also need to delete all nodes in the linked list
+
+    delete current; // Free the memory allocated for the current node
+    // Note: This is not necessary here since current is just a pointer to the last node
+
     return 0;
 }

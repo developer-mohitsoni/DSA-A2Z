@@ -22,16 +22,16 @@ public:
 
     // Constructors
 public:
-    Node(int data1, Node *next)
+    Node(int data, Node *next)
     {
-        data = data1;
-        next = next;
+        this->data = data;
+        this->next = next;
     }
 
-    Node(int data1)
+    Node(int data)
     {
-        data = data1;
-        next = nullptr; // nullptr
+        this->data = data;
+        this->next = nullptr; // nullptr
     }
 };
 
@@ -55,6 +55,8 @@ int main()
 
     // here head->next will be nullptr address
     cout << "head->next: " << head->next << endl;
+
+    delete head; // Free the memory allocated for the head node
 
     return 0;
 }

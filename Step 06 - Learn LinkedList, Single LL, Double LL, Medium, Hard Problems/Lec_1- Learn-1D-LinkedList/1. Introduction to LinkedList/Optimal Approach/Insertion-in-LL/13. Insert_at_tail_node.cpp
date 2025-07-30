@@ -103,6 +103,8 @@ Node *tailInsertion(Node *head, int data)
         return newNode;
     }
     Node *temp = head;
+
+    // Ye LL ke last par kada hai
     while (temp->next != nullptr)
     {
         temp = temp->next;
