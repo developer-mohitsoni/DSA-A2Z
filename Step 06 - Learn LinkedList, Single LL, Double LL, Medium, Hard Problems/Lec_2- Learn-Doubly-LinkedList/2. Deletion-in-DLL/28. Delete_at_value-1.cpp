@@ -289,5 +289,14 @@ int main()
 
     cout << endl;
 
+    // Deleting a node by value
+    int value;
+    cout << "Enter the value to delete: ";
+    cin >> value;
+    head = deleteAtValue(head, value);
+    cout << "Doubly Linked list after deleting value " << value << ": ";
+
+    printDLL(head);
+
     return 0;
 }
