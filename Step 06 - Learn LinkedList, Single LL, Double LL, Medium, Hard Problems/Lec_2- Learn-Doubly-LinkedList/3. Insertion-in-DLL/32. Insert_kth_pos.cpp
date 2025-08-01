@@ -1,0 +1,252 @@
+//! Program to Insert a Node at the kth position of the Doubly Linked List
+
+#include <bits/stdc++.h>
+using namespace std;
+
+//? ---------------------------- Iterative Approach ---------------------------
+
+//* T.C => O(N) => for traversal in the linked list
+
+//* S.C => O(1) => constant space complexity
+
+//* Memory Space:-
+
+/*
+*            32 Bit System               64 Bit System
+
+*            Int - 4 Bytes               Int - 4 Bytes
+*            Pointer - 4 Bytes           Pointer - 8 Bytes
+*            Overall - 8 Bytes           Overall - 12 Byte
+*/
+class Node
+{
+public:
+  Node *back; // Pointer to the previous node in the DLL
+  int data;   // Data stored in the node
+  Node *next; // Pointer to the next node in the DLL
+
+  // Constructors
+  Node(int data1, Node *next, Node *back)
+  {
+    this->back = back;
+    this->data = data1;
+    this->next = next;
+  }
+
+  Node(int data1)
+  {
+    this->back = nullptr; // Pointer to the previous node in the DLL
+    this->data = data1;
+    this->next = nullptr; // Pointer to the next node in the DLL
+  }
+};
+
+// Function to print the linked list
+void printDLL(Node *head)
+{
+  Node *temp = head;
+  while (temp != nullptr)
+  {
+    cout << temp->data << " ";
+    temp = temp->next;
+  }
+  cout << endl;
+}
+
+void printReverseDLL(Node *head)
+{
+  Node *temp = head;
+
+  // Traverse to the last node
+  while (temp->next != nullptr)
+  {
+    temp = temp->next;
+  }
+
+  // Print the elements in reverse order
+  while (temp != nullptr)
+  {
+    cout << temp->data << " ";
+    temp = temp->back;
+  }
+  cout << endl;
+}
+
+int lengthDLL(Node *head)
+{
+  int count = 0;
+  Node *temp = head;
+  while (temp != nullptr)
+  {
+    count++;
+    temp = temp->next;
+  }
+  return count;
+}
+
+void searchElement(Node *head, int element)
+{
+  Node *temp = head;
+  while (temp != nullptr)
+  {
+    if (temp->data == element)
+    {
+      cout << "Element " << element << " found in the linked list " << endl;
+      return;
+    }
+    temp = temp->next;
+  }
+  cout << "Element not found in the linked list." << endl;
+}
+
+Node *headInsertion(Node *head, int data)
+{
+  Node *newNode = new Node(data);
+  newNode->next = head;
+  if (head != nullptr)
+    head->back = newNode;
+  return newNode;
+}
+
+Node *tailInsertion(Node *head, int data)
+{
+  Node *newNode = new Node(data);
+  if (head == nullptr)
+  {
+    return newNode; // If the list is empty, return the new node as the head
+  }
+
+  Node *temp = head;
+  while (temp->next != nullptr)
+  {
+    temp = temp->next; // Traverse to the last node
+  }
+
+  temp->next = newNode; // Link the new node at the end
+  newNode->back = temp; // Set the back pointer of the new node
+  return head;          // Return the unchanged head
+}
+
+Node *insertAtKthPosition(Node *head, int data, int kthPosition)
+{
+  Node *newNode = new Node(data);
+  if (kthPosition <= 0)
+  {
+    cout << "Invalid position. Insertion at head." << endl;
+    return headInsertion(head, data);
+  }
+
+  if (kthPosition == 1)
+  {
+    newNode->next = head;
+    if (head != nullptr)
+      head->back = newNode;
+    return newNode; // New node becomes the new head
+  }
+
+  Node *kNode = head;
+  int cnt = 1;
+
+  while (kNode != nullptr && cnt < kthPosition - 1)
+  {
+    cnt++;
+    kNode = kNode->next;
+  }
+
+  if (kNode == nullptr) // If kth position is greater than length of list
+  {
+    cout << "Position exceeds the length of the list. Inserting at tail." << endl;
+    return tailInsertion(head, data);
+  }
+
+  newNode->next = kNode->next; // Link new node to the next node
+  newNode->back = kNode;       // Link new node to the current node
+
+  if (kNode->next != nullptr) // If not inserting at the end
+    kNode->next->back = newNode;
+
+  kNode->next = newNode; // Link current node to the new node
+
+  return head; // Return unchanged head
+}
+
+int main()
+{
+  int n;
+  cout << "Enter the size of array: ";
+  cin >> n;
+
+  // Check for valid input size
+  if (n <= 0)
+  {
+    cout << "Array size must be greater than 0." << endl;
+    return 0;
+  }
+
+  vector<int> arr(n);
+  cout << "Enter the elements of the array: ";
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+
+  // Creating the linked list from user input
+  Node *head = new Node(arr[0]);
+  Node *prev = head;
+  for (int i = 1; i < n; i++)
+  {
+    Node *temp = new Node(arr[i], nullptr, prev);
+    prev->next = temp;
+    prev = temp;
+  }
+
+  // Printing the Doubly linked list
+  cout << "Doubly Linked list after insertion: ";
+  printDLL(head);
+
+  // Printing the Doubly linked list in reverse order
+  cout << "Doubly Linked list in reverse order: ";
+  printReverseDLL(head);
+
+  // Finding the length of the Doubly linked list
+  int length = lengthDLL(head);
+  cout << "Length of the Doubly Linked list: " << length << endl;
+
+  // Searching for an element in the Doubly linked list
+  int element;
+  cout << "Enter the element to search for: ";
+  cin >> element;
+  searchElement(head, element);
+
+  cout << endl;
+
+  // Inserting a node at the head of the Doubly linked list
+  int headData;
+  cout << "Enter the data for the new head node: ";
+  cin >> headData;
+  head = headInsertion(head, headData);
+  cout << "Doubly Linked list after inserting at head: ";
+  printDLL(head);
+
+  cout << endl;
+
+  // Inserting a node at the tail of the Doubly linked list
+  int tailData;
+  cout << "Enter the data for the new tail node: ";
+  cin >> tailData;
+  head = tailInsertion(head, tailData);
+  cout << "Doubly Linked list after inserting at tail: ";
+  printDLL(head);
+
+  cout << endl;
+
+  // Inserting a node at the kth position of the Doubly linked list
+  int data, kthPosition;
+  cout << "Enter the data for the new node: ";
+  cin >> data;
+  cout << "Enter the position to insert the new node: ";
+  cin >> kthPosition;
+  head = insertAtKthPosition(head, data, kthPosition);
+  cout << "Doubly Linked list after inserting at position " << kthPosition << ": ";
+  printDLL(head);
+
+  return 0;
+}
