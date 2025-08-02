@@ -118,17 +118,6 @@ int main()
   cout << "Linked list after insertion: ";
   printLL(head);
 
-  // Creating a loop for testing (optional)
-  if (n > 1) // Ensure there are at least two nodes to create a loop
-  {
-    current->next = head->next->next->next; // Creating a loop by pointing the last node to the fourth node
-    cout << "Loop created in the linked list." << endl;
-  }
-  else
-  {
-    cout << "No loop created in the linked list." << endl;
-  }
-
   // Reversing nodes in k-group
   int k;
   cout << "Enter the value of k: ";
